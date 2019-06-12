@@ -1,0 +1,16 @@
+name: BasicCommands
+version: 1.0
+main: de.tlph1.main.Basics
+author: TLPH1
+commands:
+  heal:
+    description: "Mit /heal (<Spieler>) kann man sich selbst oder einen anderen Spieler heilen"
+  fly:
+    description: "Mit /fly (<Spieler>) kann man sich selbst oder einen anderen Spieler in den Flugmodus versetzen"
+  gm:
+    description: "Mit /gm 0/1/2/3 kann man sich selbst in einen anderen Gamemode versetzen"
+  day:
+    description: "Mit /day wird es Tag"
+  night:
+    description: "Mit /night wird es Nacht"
+
