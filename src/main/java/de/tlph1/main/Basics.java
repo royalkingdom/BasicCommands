@@ -19,5 +19,6 @@ public class Basics extends JavaPlugin {
         getCommand("fly").setExecutor(new Fly());
         getCommand("day").setExecutor(new Day());
         getCommand("night").setExecutor(new Night());
+        getCommand("vanish").setExecutor(new Vanish());
     }
 }

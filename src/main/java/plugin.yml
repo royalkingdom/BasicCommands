@@ -13,4 +13,7 @@ commands:
     description: "Mit /day wird es Tag"
   night:
     description: "Mit /night wird es Nacht"
+  vanish:
+      description: "Mit /vanish oder /v wirst du unsichtbar"
+      aliases: [v]
 
