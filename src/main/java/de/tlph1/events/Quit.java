@@ -1,5 +1,6 @@
-package de.tlph1.util;
+package de.tlph1.events;
 
+import de.tlph1.util.ConfigWerte;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -7,11 +8,14 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class Quit implements Listener {
 
+    private ConfigWerte cw;
+
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event)
     {
+        cw = new ConfigWerte();
         Player p = event.getPlayer();
-        event.setQuitMessage("§e" + p.getDisplayName() + " §chat das Königreich verlassen");
+        event.setQuitMessage(cw.Prefix + cw.QuitMessage.replace("%player%", p.getDisplayName()));
 
     }
 
