@@ -1,22 +1,32 @@
 package de.tlph1.main;
 
 import de.tlph1.commands.*;
+import de.tlph1.util.ConfigWerte;
 import de.tlph1.util.Join;
+import de.tlph1.util.MessageConfig;
 import de.tlph1.util.Quit;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Basics extends JavaPlugin {
 
+    private MessageConfig mc;
+    private ConfigWerte cw;
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage("BasicCommands gestartet");
-        onCommands();
+        mc = new MessageConfig();
+        mc.setMessages();
+        cw = new ConfigWerte();
+        ConfigWerte.consoleMessage("    ");
+        ConfigWerte.consoleMessage(cw.Prefix + cw.PluginStart);
+        ConfigWerte.consoleMessage("    ");
+        registerCommands();
         registerEvents();
     }
 
-    public void onCommands(){
+    public void registerCommands(){
         getCommand("gm").setExecutor(new Gm());
         getCommand("heal").setExecutor(new Heal());
         getCommand("fly").setExecutor(new Fly());
