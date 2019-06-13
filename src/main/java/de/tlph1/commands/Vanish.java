@@ -3,6 +3,7 @@ package de.tlph1.commands;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.tlph1.util.ConfigWerte;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,22 +15,23 @@ public class Vanish implements CommandExecutor {
 
     public static List<Player> vanished = new ArrayList<Player>();
 
+    private ConfigWerte cw;
 
     public boolean onCommand(CommandSender sender, Command arg1, String arg2, String[] args) {
-
+        cw = new ConfigWerte();
         if (sender instanceof Player) {
             Player p = (Player) sender;
             if (p.hasPermission("bc.vanish")){
                 if (args.length == 0) {
                     if (vanished.contains(p)) {
                         vanished.remove(p);
-                      p.sendMessage("§cDu bist nun Sichtbar");
+                        ConfigWerte.playerMessage(p,cw.Prefix + cw.Sichtbar);
                         for (Player all : Bukkit.getOnlinePlayers()) {
                             all.showPlayer(p);
                         }
                     } else {
                         vanished.add(p);
-                        p.sendMessage("§aDu bist nun unsichtbar");
+                        ConfigWerte.playerMessage(p,cw.Prefix + cw.Unsichtbar);
                         for (Player all : Bukkit.getOnlinePlayers()) {
                             if (!all.hasPermission("bc.vanish.see")) {
                                 all.hidePlayer(p);
@@ -39,9 +41,9 @@ public class Vanish implements CommandExecutor {
                 }
             }
             else
-                p.sendMessage("§cDu hast nich die benötigten Rechte für diesen Befehl");
+                ConfigWerte.playerMessage(p, cw.Prefix + cw.NoPerm);
         }else
-            Bukkit.getConsoleSender().sendMessage("§cDieser Befehl kann man nur als Spieler ausfuehren");
+            ConfigWerte.consoleMessage(cw.Prefix + cw.PlayerCommand);
         return false;
     }
 }

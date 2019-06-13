@@ -30,6 +30,10 @@ public class ConfigWerte {
     public final String DayCMD = cfg.getString("BasicCommands.DayNight.DayCMD");
     public final String NightCMD = cfg.getString("BasicCommands.DayNight.NightCMD");
 
+    //Vanish
+    public final String Unsichtbar = cfg.getString("BasicCommands.Vanish.Unsichtbar");
+    public final String Sichtbar = cfg.getString("BasicCommands.Vanish.sichtbar");
+
     public static void playerMessage(Player player, String message){
         player.sendMessage(ChatColor.translateAlternateColorCodes('&',message));
     }

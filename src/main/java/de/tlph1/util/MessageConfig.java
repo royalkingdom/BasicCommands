@@ -25,9 +25,20 @@ public class MessageConfig {
             cfg.set("BasicCommands.DayNight.Night", "&2Es ist nun Nacht!");
             cfg.set("BasicCommands.DayNight.NightCMD", "&2Benutze /night!");
         }
+        if(!cfg.contains("BasicCommands.Fly")){
+            cfg.set("BasicCommands.Fly.Fly", "");
+            cfg.set("BasicCommands.Fly.FlyOther", "");
+            cfg.set("BasicCommands.Fly.NoFly", "");
+            cfg.set("BasicCommands.Fly.NoFlyOther", "");
+            cfg.set("BasicCommands.Fly.FlyCMD", "");
+        }
+        if(!cfg.contains("BasicCommands.Vanish")){
+            cfg.set("BasicCommands.Vanish.Unsichtbar", "&aDu bist nun unsichtbar");
+            cfg.set("BasicCommands.Vanish.Schtbar", "&aDu bist nun sichtbar");
+        }
         save();
     }
-    
+
     private void save(){
         try {
             cfg.save(file);
