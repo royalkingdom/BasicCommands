@@ -27,6 +27,7 @@ public class MessageConfig {
         }
         save();
     }
+    
     private void save(){
         try {
             cfg.save(file);
