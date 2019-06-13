@@ -1,12 +1,11 @@
 package de.tlph1.main;
 
 import de.tlph1.commands.*;
+import de.tlph1.events.Join;
+import de.tlph1.events.Quit;
 import de.tlph1.util.ConfigWerte;
-import de.tlph1.util.Join;
 import de.tlph1.util.MessageConfig;
-import de.tlph1.util.Quit;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Basics extends JavaPlugin {
