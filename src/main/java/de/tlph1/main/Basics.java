@@ -1,6 +1,8 @@
 package de.tlph1.main;
 
 import de.tlph1.commands.*;
+import de.tlph1.util.Join;
+import de.tlph1.util.Quit;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,6 +13,7 @@ public class Basics extends JavaPlugin {
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage("BasicCommands gestartet");
         onCommands();
+        registerEvents();
     }
 
     public void onCommands(){
@@ -22,5 +25,10 @@ public class Basics extends JavaPlugin {
         getCommand("vanish").setExecutor(new Vanish());
         getCommand("rain").setExecutor(new Rain());
         getCommand("sun").setExecutor(new Sun());
+    }
+
+    public void registerEvents(){
+        Bukkit.getPluginManager().registerEvents(new Join(), this);
+        Bukkit.getPluginManager().registerEvents(new Quit(), this);
     }
 }
