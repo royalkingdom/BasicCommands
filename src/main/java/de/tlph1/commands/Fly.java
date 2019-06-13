@@ -26,19 +26,20 @@ public class Fly implements CommandExecutor {
                         if (target.getAllowFlight() == false) {
                             target.setAllowFlight(true);
                             target.sendMessage("§aDu kannst nun fliegen");
-                            p.sendMessage("Du hast §e" + target.getName() + " §7in den Flugmodus gesetzt");
-                        } else
+                            p.sendMessage("Du hast §e" + target.getName() + " §fin den Flugmodus gesetzt");
+                        } else if (target.getAllowFlight() == true){
                             target.setAllowFlight(false);
                         target.sendMessage("§cDu kannst nun nicht mehr fliegen");
-                        p.sendMessage("Du hast §e" + target.getName() + " §7den Flugmodus entfernt");
+                        p.sendMessage("Du hast §e" + target.getName() + " §fden Flugmodus entfernt");
+                    }
                     }else p.sendMessage("Bitte benutze /fly");
-                    } else p.sendMessage("Der Spieler §e " + target.getName() + " §7ist nicht online");
+                    } else p.sendMessage("Der Spieler §e " + target.getName() + " §fist nicht online");
             }
 
         }else
             p.sendMessage("§cDu hast nicht die benötigten Rechte für diesen Befehl");
     }else
-        Bukkit.getConsoleSender().sendMessage("Diesen befehl darf man nur als Spieler ausführen !");
+        Bukkit.getConsoleSender().sendMessage("§cDiesen befehl darf man nur als Spieler ausführen !");
 
 
         return false;

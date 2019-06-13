@@ -6,21 +6,22 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Night implements CommandExecutor {
+public class Sun implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         Player p = (Player) sender;
         if(sender instanceof Player){
-            if(p.hasPermission("bc.time")){
-                if(args.length == 0) {
-                    p.getWorld().setTime(15000);
-                    p.sendMessage("§aDie Nacht bricht nun herrein");
+            if(p.hasPermission("bc.weather")){
+                if(args.length == 0){
+                    p.getLocation().getWorld().setStorm(false);
+                    p.getLocation().getWorld().setThundering(false);
+                    Bukkit.broadcastMessage("§eDie Sonne erscheint !");
                 }else
-                    p.sendMessage("Bitte benutze /help NIGHT");
+                    p.sendMessage("§cBitte benutze /help RAIN");
+
             }else
                 p.sendMessage("§cDu hast nicht die benötigten Rechte für diesen Befehl !");
         }else
-            sender.sendMessage("Dieser Befehl darf man nur als Spieler ausführen !");
-
+            sender.sendMessage("§cDieser Befehl kann man nur als Spieler ausführen !");
         return false;
     }
 }

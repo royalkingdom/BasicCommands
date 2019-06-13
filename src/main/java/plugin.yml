@@ -13,6 +13,10 @@ commands:
     description: "Mit /day wird es Tag"
   night:
     description: "Mit /night wird es Nacht"
+  rain:
+    description: "Mit /rain zieht ein Sturm auf"
+  sun:
+    description: "Mit /sun erscheint die Sonne"
   vanish:
       description: "Mit /vanish oder /v wirst du unsichtbar"
       aliases: [v]
