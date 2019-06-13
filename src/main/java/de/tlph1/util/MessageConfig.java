@@ -18,6 +18,7 @@ public class MessageConfig {
         }
         if(!cfg.contains("Settings")){
             cfg.set("Settings.PlayerCommand", "Dieser Befehl darf man nur als Spieler ausführen !");
+            cfg.set("Settings.PlayerOffline", "Der Spieler &e%player% &fist nicht online");
         }
         if(!cfg.contains("BasicCommands.DayNight")){
             cfg.set("BasicCommands.DayNight.Day", "&2Es ist nun Tag!");
@@ -26,11 +27,11 @@ public class MessageConfig {
             cfg.set("BasicCommands.DayNight.NightCMD", "&2Benutze /night!");
         }
         if(!cfg.contains("BasicCommands.Fly")){
-            cfg.set("BasicCommands.Fly.Fly", "");
-            cfg.set("BasicCommands.Fly.FlyOther", "");
-            cfg.set("BasicCommands.Fly.NoFly", "");
-            cfg.set("BasicCommands.Fly.NoFlyOther", "");
-            cfg.set("BasicCommands.Fly.FlyCMD", "");
+            cfg.set("BasicCommands.Fly.Fly", "&aDu kannst nun fliegen");
+            cfg.set("BasicCommands.Fly.FlyOther", "&2Du hast &e%player% &fin den Flugmodus gesetzt");
+            cfg.set("BasicCommands.Fly.NoFly", "&cDu kannst nun nicht mehr fliegen");
+            cfg.set("BasicCommands.Fly.NoFlyOther", "&2Du hast &e%player% &fden Flugmodus entfernt");
+            cfg.set("BasicCommands.Fly.FlyCMD", "Bitte benutze /fly");
         }
         if(!cfg.contains("BasicCommands.Vanish")){
             cfg.set("BasicCommands.Vanish.Unsichtbar", "&aDu bist nun unsichtbar");

@@ -19,6 +19,7 @@ public class ConfigWerte {
     public final String PluginStart = cfg.getString("Settings.PluginStart");
     public final String NoPerm = cfg.getString("Settings.NoPerm");
     public final String PlayerCommand = cfg.getString("Settings.PlayerCommand");
+    public final String PlayerOffline = cfg.getString("Settings.PlayerOffline");
 
     //JoinLeave
     public final String JoinMessage = cfg.getString("BasicCommnds.JoinLeave.Join");
@@ -33,6 +34,13 @@ public class ConfigWerte {
     //Vanish
     public final String Unsichtbar = cfg.getString("BasicCommands.Vanish.Unsichtbar");
     public final String Sichtbar = cfg.getString("BasicCommands.Vanish.sichtbar");
+
+    //Fly
+    public final String Fly = cfg.getString("BasicCommands.Fly.Fly");
+    public final String NoFly = cfg.getString("BasicCommands.Fly.NoFly");
+    public final String FlyOther = cfg.getString("BasicCommands.Fly.FlyOther");
+    public final String NoFlyOther = cfg.getString("BasicCommands.Fly.NoFlyOther");
+    public final String FlyCMD = cfg.getString("BasicCommands.Fly.FlyCMD");
 
     public static void playerMessage(Player player, String message){
         player.sendMessage(ChatColor.translateAlternateColorCodes('&',message));
