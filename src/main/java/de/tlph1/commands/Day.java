@@ -1,5 +1,6 @@
 package de.tlph1.commands;
 
+import de.tlph1.util.ConfigWerte;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -7,20 +8,23 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class Day implements CommandExecutor {
+
+    private ConfigWerte cw;
+
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         Player p = (Player) sender;
+        cw = new ConfigWerte();
         if(sender instanceof Player){
             if(p.hasPermission("bc.time")){
                 if(args.length == 0) {
                     p.getWorld().setTime(1000);
-                    p.sendMessage("§aEs ist nun Tag");
+                    ConfigWerte.playerMessage(p,cw.Prefix + cw.Day);
                 }else
-                    p.sendMessage("Bitte benutze /help DAY");
+                    ConfigWerte.playerMessage(p,cw.Prefix + cw.DayCMD);
             }else
-                p.sendMessage("§cDu hast nicht die benötigten Rechte für diesen Befehl !");
+                ConfigWerte.playerMessage(p,cw.Prefix + cw.NoPerm);
         }else
-            sender.sendMessage("Dieser Befehl darf man nur als Spieler ausführen !");
-
+            ConfigWerte.consoleMessage(cw.Prefix + cw.PlayerCommand);
         return false;
     }
 }
