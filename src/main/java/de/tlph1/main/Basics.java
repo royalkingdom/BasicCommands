@@ -1,6 +1,7 @@
 package de.tlph1.main;
 
 import de.tlph1.commands.*;
+import de.tlph1.util.Death;
 import de.tlph1.util.Join;
 import de.tlph1.util.Quit;
 import org.bukkit.Bukkit;
@@ -30,5 +31,6 @@ public class Basics extends JavaPlugin {
     public void registerEvents(){
         Bukkit.getPluginManager().registerEvents(new Join(), this);
         Bukkit.getPluginManager().registerEvents(new Quit(), this);
+        Bukkit.getPluginManager().registerEvents(new Death(), this);
     }
 }
