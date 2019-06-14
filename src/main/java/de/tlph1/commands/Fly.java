@@ -2,6 +2,7 @@ package de.tlph1.commands;
 
 import de.tlph1.util.ConfigWerte;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,7 +21,7 @@ public class Fly implements CommandExecutor {
                 if(p.getAllowFlight() == false){
                     p.setAllowFlight(true);
                     ConfigWerte.playerMessage(p, cw.Prefix + cw.Fly);
-                }else if(p.getAllowFlight() == true) {
+                }else if(p.getAllowFlight() == true && !p.getGameMode().equals(GameMode.CREATIVE)) {
                     p.setAllowFlight(false);
                     ConfigWerte.playerMessage(p, cw.Prefix + cw.NoFly);
                 }
