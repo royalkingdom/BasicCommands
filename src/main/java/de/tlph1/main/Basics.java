@@ -4,15 +4,25 @@ import de.tlph1.commands.*;
 import de.tlph1.events.Death;
 import de.tlph1.events.Join;
 import de.tlph1.events.Quit;
+import de.tlph1.util.ConfigWerte;
+import de.tlph1.util.MessageConfig;
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Basics extends JavaPlugin {
 
+    private ConfigWerte cw;
+    private MessageConfig mc;
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage("BasicCommands started");
+        mc = new MessageConfig();
+        mc.setMessages();
+        cw = new ConfigWerte();
+        ConfigWerte.consoleMessage("    ");
+        ConfigWerte.consoleMessage(cw.Prefix + cw.PluginStart);
+        ConfigWerte.consoleMessage("    ");
         onCommands();
         registerEvents();
     }
