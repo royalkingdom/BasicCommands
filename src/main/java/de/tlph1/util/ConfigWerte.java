@@ -42,6 +42,10 @@ public class ConfigWerte {
     public final String NoFlyOther = cfg.getString("BasicCommands.Fly.NoFlyOther");
     public final String FlyCMD = cfg.getString("BasicCommands.Fly.FlyCMD");
 
+    //SunRain
+    public final String Sun = cfg.getString("BasicCommands.SunRain.Sun");
+    public final String SunCMD = cfg.getString("BasicCommands.SunRain.SunCMD");
+
     public static void playerMessage(Player player, String message){
         player.sendMessage(ChatColor.translateAlternateColorCodes('&',message));
     }

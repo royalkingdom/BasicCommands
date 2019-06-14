@@ -37,6 +37,10 @@ public class MessageConfig {
             cfg.set("BasicCommands.Vanish.Unsichtbar", "&aDu bist nun unsichtbar");
             cfg.set("BasicCommands.Vanish.Schtbar", "&aDu bist nun sichtbar");
         }
+        if(!cfg.contains("BasicCommands.SunRain")){
+            cfg.set("BasicCommands.SunRain.Sun","&eDie Sonne erscheint !");
+            cfg.set("BasicCommands.SunRain.SunCMD","&cBitte benutze /rain");
+        }
         save();
     }
 
