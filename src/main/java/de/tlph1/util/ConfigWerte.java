@@ -45,6 +45,8 @@ public class ConfigWerte {
     //SunRain
     public final String Sun = cfg.getString("BasicCommands.SunRain.Sun");
     public final String SunCMD = cfg.getString("BasicCommands.SunRain.SunCMD");
+    public final String Rain = cfg.getString("BasicCommands.SunRain.Rain");
+    public final String RainCMD = cfg.getString("BasicCommands.SunRain.RainCMD");
 
     public static void playerMessage(Player player, String message){
         player.sendMessage(ChatColor.translateAlternateColorCodes('&',message));

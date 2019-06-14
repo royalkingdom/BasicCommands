@@ -39,7 +39,9 @@ public class MessageConfig {
         }
         if(!cfg.contains("BasicCommands.SunRain")){
             cfg.set("BasicCommands.SunRain.Sun","&eDie Sonne erscheint !");
-            cfg.set("BasicCommands.SunRain.SunCMD","&cBitte benutze /rain");
+            cfg.set("BasicCommands.SunRain.SunCMD","&cBitte benutze /sun");
+            cfg.set("BasicCommands.SunRain.Rain","&cEin Gewitter zieht auf !");
+            cfg.set("BasicCommands.SunRain.RainCMD","&cBitte benutze /rain");
         }
         save();
     }
