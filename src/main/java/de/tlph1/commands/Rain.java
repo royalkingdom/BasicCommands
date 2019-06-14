@@ -13,8 +13,8 @@ public class Rain implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         cw = new ConfigWerte();
-        Player p = (Player) sender;
         if(sender instanceof Player){
+            Player p = (Player) sender;
             if(p.hasPermission("bc.weather")){
                 if(args.length == 0){
                 p.getLocation().getWorld().setStorm(true);

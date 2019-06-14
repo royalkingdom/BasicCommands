@@ -12,9 +12,9 @@ public class Night implements CommandExecutor {
     private ConfigWerte cw;
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        Player p = (Player) sender;
         cw = new ConfigWerte();
         if(sender instanceof Player){
+            Player p = (Player) sender;
             if(p.hasPermission("bc.time")){
                 if(args.length == 0) {
                     p.getWorld().setTime(15000);
