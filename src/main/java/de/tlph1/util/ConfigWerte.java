@@ -48,6 +48,11 @@ public class ConfigWerte {
     public final String Rain = cfg.getString("BasicCommands.SunRain.Rain");
     public final String RainCMD = cfg.getString("BasicCommands.SunRain.RainCMD");
 
+    //Heal
+    public final String Heal = cfg.getString("BasicCommands.Heal.Heal");
+    public final String HealOther = cfg.getString("BasicCommands.Heal.HealOther");
+    public final String HealCMD = cfg.getString("BasicCommands.Heal.HealCMD");
+
     public static void playerMessage(Player player, String message){
         player.sendMessage(ChatColor.translateAlternateColorCodes('&',message));
     }

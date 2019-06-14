@@ -19,6 +19,9 @@ public class MessageConfig {
         if(!cfg.contains("Settings")){
             cfg.set("Settings.PlayerCommand", "Dieser Befehl darf man nur als Spieler ausführen !");
             cfg.set("Settings.PlayerOffline", "Der Spieler &e%player% &fist nicht online");
+            cfg.set("Settings.Prefix", "&2RoyalKingdom &5> &r");
+            cfg.set("Settings.PluginStart","&2&lDas Plugin ist Gestartet!");
+            cfg.set("Settings.NoPerm", "&4Dazu hast du keine Rechte!");
         }
         if(!cfg.contains("BasicCommands.DayNight")){
             cfg.set("BasicCommands.DayNight.Day", "&2Es ist nun Tag!");
@@ -42,6 +45,11 @@ public class MessageConfig {
             cfg.set("BasicCommands.SunRain.SunCMD","&cBitte benutze /sun");
             cfg.set("BasicCommands.SunRain.Rain","&cEin Gewitter zieht auf !");
             cfg.set("BasicCommands.SunRain.RainCMD","&cBitte benutze /rain");
+        }
+        if(!cfg.contains("BasicCommands.Heal")){
+            cfg.set("BasicCommands.Heal.Heal", "&aDu wurdest geheilt!");
+            cfg.set("BasicCommands.Heal.HealOther", "&aDu hast den Spieler §6%player% &ageheilt.");
+            cfg.set("BasicCommands.Heal.HealCMD", "&cBitte Benutze §6/heal oder /heal<SPIELER>");
         }
         save();
     }
