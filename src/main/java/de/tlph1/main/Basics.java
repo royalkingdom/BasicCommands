@@ -12,7 +12,7 @@ public class Basics extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage("BasicCommands gestartet");
+        Bukkit.getConsoleSender().sendMessage("BasicCommands started");
         onCommands();
         registerEvents();
     }
